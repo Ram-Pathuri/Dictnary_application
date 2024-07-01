@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know the meaning</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #31b9b0;
+        }
+        .main-heading {
+            margin-left: 20px;
+            color: #333;
+            font-size: 2em;
+            border-left: 5px solid #eef6f6;
+            padding-left: 10px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #37b7d7;
+            font-size: 1.5em;
+            padding-bottom: 5px;
+        }
+        .section p {
+            color: #555;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">{{word}}</h1>
+
+    <div class="section">
+        <h2>Meanings</h2>
+{% for meaning in meanings %}
+       <p>{{ meaning }}</p>
+{% endfor %}
+
+
+
+    </div>
+
+    <div class="section">
+        <h2>Synonyms</h2>
+         <p>{% if antonyms %}
+        {{ antonyms }}
+    {% else %}
+        No antonyms available
+    {% endif %}
+         </p>
+    </div>
+
+    <div class="section">
+        <h2>Antonyms</h2>
+        <p>{% if antonyms %}
+        {{ antonyms }}
+    {% else %}
+        No antonyms available
+    {% endif %}
+    </p>
+    </div>
+</body>
+</html>
